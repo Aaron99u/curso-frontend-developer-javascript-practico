@@ -10,16 +10,33 @@ menuHamIcon.addEventListener('click', toggleMobileMenu);
 menuCarritoIcon.addEventListener('click', toggleCarritoAside);
 
 function toggleCarritoAside(){
-    const isMobileMenuOpen = !mobileMenu.classList.contains('inactive');
-    const isAsideOpen = !aside.classList.contains('inactive');
-
+    const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
+    const isDesktopClosed = desktopMenu.classList.contains('inactive');
+    if(!isMobileMenuClosed){
+        mobileMenu.classList.add('inactive');
+    }
+    if(!isDesktopClosed){
+        desktopMenu.classList.add('inactive');
+    }
     aside.classList.toggle('inactive');
+    
 }
 
 function toggleDesktopMenu(){
+    const isAsideClosed = aside.classList.contains('inactive');
+
+    if(!isAsideClosed){
+        aside.classList.add('inactive');
+    }
     desktopMenu.classList.toggle('inactive');
 }
 
 function toggleMobileMenu(){
+    const isAsideClosed = aside.classList.contains('inactive');
+
+    if(!isAsideClosed){
+        aside.classList.add('inactive');
+    }
+
     mobileMenu.classList.toggle('inactive');
 }
